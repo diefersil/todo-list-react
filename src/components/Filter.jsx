@@ -1,12 +1,12 @@
 import React from "react";
-const Filter = (filter,setFilter,sort,setSort) => {
+const Filter = ({filter,setFilter,sort,setSort}) => {
     return (  
         <div className="filter">
             <h2>Filtrar</h2>
             <div className="filter-options">
                 <div>
                     <p>Status</p>
-                    <select onChange={(e) => setFilter(e.target.value)}>
+                    <select value={filter} onChange={(e) => setFilter(e.target.value)}>
                         <option value='All'>Todas</option>
                         <option value='Completed'>Completas</option>
                         <option value='Incomplete'>Imcompletas</option>

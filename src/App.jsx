@@ -3,7 +3,7 @@ import "./App.css"
 import Todo from "./components/Todo"
 import TodoForm from "./components/TodoForm"
 import Search from "./components/Search"
-import Filter from "./components/Filter"
+import Filter from './components/Filter'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -50,7 +50,9 @@ function App() {
 
   
   const [search,setSearch] = useState("")
+
   const [filter,setFilter] = useState("All")
+
   const [sort,setSort] = useState("Asc")
   
 
@@ -74,8 +76,11 @@ function App() {
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
+
       <Search search={search} setSearch={setSearch} />
+      
       <Filter filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
+      
       <div className="todo-list">
         {todos
           .filter((todo) => filter === 'All' ? true : filter === 'Completed' ? todo.isCompleted : !todo.isCompleted)
